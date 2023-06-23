@@ -1,5 +1,13 @@
 package com.example.demo.repositories;
 
-public class EmployeeRepository {
-    
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.entities.EmployeeEntity;
+import java.util.Optional;
+
+
+@Repository
+public interface EmployeeRepository extends CrudRepository<EmployeeEntity, Integer>{
+    Optional<EmployeeEntity> findById(Integer id);
 }
